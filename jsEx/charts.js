@@ -17,7 +17,7 @@ function renderChart(canvasId, data, label) {
     const ctx = document.getElementById(canvasId).getContext('2d');
     new Chart(ctx, {
         type: 'line',
-        data: {
+        data: { 
             datasets: [{
                 label: label,
                 data: data,

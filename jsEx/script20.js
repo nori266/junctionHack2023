@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         fetchTextAndUpdate();
     });
 });
-
+ 
 async function loadDataAndRenderCharts() {
     // try {
         const response = await fetch('data.json');
@@ -27,12 +27,27 @@ async function loadDataAndRenderCharts() {
 }
 
 async function fetchTextAndUpdate() {
-    try {
-        const response = await fetch('api_endpoint_here');
-        const text = await response.text();
-        document.getElementById('text-block').innerText = text;
-    } catch (error) {
-        console.error('Error:', error);
-        // Handle error appropriately
+    const postData = {
+        heart_rate: 0.1,
+        oxygen_saturation: 0.2,
+        sleep_data: 0.5
+        // Add other fields as required by your API
+    };
+
+    const response = await fetch('http://localhost:8000/prevent', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(postData)
+    });
+
+    if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
     }
+
+    const data = await response.json();
+    document.getElementById('text-block').innerText = `Action: ${data.action}`;
+
 }
+

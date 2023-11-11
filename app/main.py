@@ -8,8 +8,11 @@ app = FastAPI()
 # Define the Pydantic model for input data
 class State(BaseModel):
     heart_rate: float
+    resting_heart_rate: float
     oxygen_saturation: float
-    sleep_data: float
+    temperature: float
+    sleep: float
+    mood: float
 
 # Load the pre-trained DQN model
 # Update the path to your model file
