@@ -1,61 +1,41 @@
-let currentScenario = 1;
-let rawData = [];  // This will hold the original parsed data
+// script.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Initial data loading and chart rendering
+    loadDataAndRenderCharts();
 
-
-
-// Function to read CSV from a local file path
-function readCSVFromPath(filePath) {
-    fetch(filePath)
-        .then(response => response.text())
-        .then(text => {
-            Papa.parse(text, {
-                header: true,
-                complete: function(results) {
-                    rawData = results.data;
-                    plotData();
-                }
-            });
-        })
-        .catch(error => console.error('Error reading the CSV file:', error));
-}
-
-function plotData() {
-    // Filter data based on currentScenario
-    const filteredData = rawData.filter(row => parseInt(row['scenarioColumnIndex']) === currentScenario);
-
-    for (let i = 1; i <= 7; i++) {
-        const plotData = filteredData.map(row => ({ x: row[0], y: row[i] }));
-        const ctx = document.getElementById(`plot${i}`).getContext('2d');
-
-        // Clear the previous chart if it exists
-        if (window.myCharts && window.myCharts[i]) {
-            window.myCharts[i].destroy();
-        }
-
-        // Create a new chart
-        window.myCharts = window.myCharts || {};
-        window.myCharts[i] = new Chart(ctx, {
-            type: 'line',
-            data: {
-                datasets: [{
-                    label: `Data for Plot ${i}`,
-                    data: plotData,
-                    // Add more styling as needed
-                }]
-            },
-            options: {
-                scales: {
-                    x: { type: 'linear', position: 'bottom' }
-                }
-            }
-        });
-    }
-}
-
-document.getElementById('nextScenario').addEventListener('click', function() {
-    currentScenario = (currentScenario % 5) + 1; // Loop through scenarios 1-5
-    plotData();
+    // Event listener for the button
+    document.getElementById('change-data-button').addEventListener('click', function() {
+        loadDataAndRenderCharts();
+        fetchTextAndUpdate();
+    });
 });
 
-// Call the function with your file path
-readCSVFromPath('sample_data.csv');
+function loadDataAndRenderCharts() {
+    fetch('data.json') // Adjust this to your JSON file's path
+        .then(response => response.json())
+        .then(data => {
+            // Process the JSON data and render charts
+            renderCharts(data);
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+function renderCharts(data) {
+    // Process the JSON data to extract necessary information for each chart
+    // Example: Extract heart rate data
+    let heartRateData = data.map(item => ({ x: item.scenario, y: item["heart rate"] }));
+    // Similarly process temperature and rhb data
+
+    // Now use this data to render the charts using Chart.js or any other charting library
+    // This is a placeholder. You should create actual Chart.js instances here.
+    console.log("Render charts with data:", heartRateData);
+}
+
+function fetchTextAndUpdate() {
+    fetch('api_endpoint_here')
+        .then(response => response.text())
+        .then(text => {
+            document.getElementById('text-block').innerText = text;
+        })
+        .catch(error => console.error('Error:', error));
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Measurement Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="left-panel">
+        <div id="plot-container">
+            <div class="chart" id="heart-rate-chart-container">
+                <canvas id="heart-rate-chart"></canvas>
+            </div>
+            <div class="chart" id="temperature-chart-container">
+                <canvas id="temperature-chart"></canvas>
+            </div>
+            <div class="chart" id="rhb-chart-container">
+                <canvas id="rhb-chart"></canvas>
+            </div>
+        </div>
+        <button id="change-data-button">Change Data</button>
+    </div>
+
+    <div id="right-panel">
+        <img id="top-image" src="https://lilianweng.github.io/posts/2018-02-19-rl-overview/RL_illustration.png" alt="Top Image">
+        <div id="text-block">Text will be displayed here</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

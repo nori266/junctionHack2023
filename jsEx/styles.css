@@ -1,0 +1,37 @@
+/* styles.css */
+body {
+    display: flex;
+    font-family: Arial, sans-serif;
+}
+
+#left-panel {
+    flex: 1;
+    padding: 20px;
+}
+
+#right-panel {
+    flex: 1;
+    padding: 20px;
+}
+
+#plot-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#plot-container canvas {
+    height: 150px; /* Adjust as needed */
+}
+
+#change-data-button {
+    margin-top: 20px;
+}
+
+#text-block {
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+}
