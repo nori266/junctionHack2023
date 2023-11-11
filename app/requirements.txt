@@ -1,0 +1,21 @@
+annotated-types @ file:///home/conda/feedstock_root/build_artifacts/annotated-types_1696634205638/work
+anyio @ file:///home/conda/feedstock_root/build_artifacts/anyio_1688651106312/work/dist
+cffi @ file:///D:/bld/cffi_1696001739918/work
+exceptiongroup @ file:///home/conda/feedstock_root/build_artifacts/exceptiongroup_1692026125334/work
+fastapi @ file:///home/conda/feedstock_root/build_artifacts/fastapi_1698674661010/work
+filelock @ file:///home/conda/feedstock_root/build_artifacts/filelock_1698714947081/work
+idna @ file:///home/conda/feedstock_root/build_artifacts/idna_1663625384323/work
+Jinja2 @ file:///home/conda/feedstock_root/build_artifacts/jinja2_1654302431367/work
+MarkupSafe @ file:///D:/bld/markupsafe_1695367558436/work
+mkl-service==2.4.0
+mpmath @ file:///home/conda/feedstock_root/build_artifacts/mpmath_1678228039184/work
+networkx @ file:///home/conda/feedstock_root/build_artifacts/networkx_1698504735452/work
+numpy @ file:///D:/bld/numpy_1695291088396/work/dist/numpy-1.26.0-cp39-cp39-win_amd64.whl#sha256=3bf8e34c9e5371f90bc54396e97ec118512980246f410b3506281daef313a82d
+pycparser @ file:///home/conda/feedstock_root/build_artifacts/pycparser_1636257122734/work
+pydantic @ file:///home/conda/feedstock_root/build_artifacts/pydantic_1689770207113/work
+pydantic_core @ file:///D:/bld/pydantic-core_1689286470229/work
+sniffio @ file:///home/conda/feedstock_root/build_artifacts/sniffio_1662051266223/work
+starlette @ file:///home/conda/feedstock_root/build_artifacts/starlette-recipe_1684245096404/work
+sympy @ file:///home/conda/feedstock_root/build_artifacts/sympy_1684180539862/work
+torch @ file:///C:/b/abs_abjetg6_iu/croot/pytorch_1686932924616/work
+typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/typing_extensions_1695040754690/work
