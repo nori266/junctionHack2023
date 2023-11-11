@@ -1,15 +1,14 @@
-/* styles.css */
+:root {
+    --border-color: #ccc;
+    --background-color: #f9f9f9;
+}
+
 body {
     display: flex;
     font-family: Arial, sans-serif;
 }
 
-#left-panel {
-    flex: 1;
-    padding: 20px;
-}
-
-#right-panel {
+#left-panel, #right-panel {
     flex: 1;
     padding: 20px;
 }
@@ -21,7 +20,7 @@ body {
 }
 
 #plot-container canvas {
-    height: 150px; /* Adjust as needed */
+    height: 150px;
 }
 
 #change-data-button {
@@ -30,8 +29,12 @@ body {
 
 #text-block {
     border-radius: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     padding: 15px;
     margin-top: 20px;
-    background-color: #f9f9f9;
+    background-color: var(--background-color);
+}
+
+@media screen and (max-width: 600px) {
+    /* Responsive styles */
 }
